@@ -1,0 +1,7 @@
+format: jb-book
+root: intro
+chapters:
+  - file: notebooks/01_protocol_overview
+  - file: notebooks/02_key_agreement
+  - file: notebooks/03_ratcheting
+  - file: notebooks/04_full_session

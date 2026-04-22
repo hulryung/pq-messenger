@@ -1,0 +1,2 @@
+/* Hide the default "By {author}" footer — its Korean locale renders awkwardly. */
+.bd-footer-content .component-author { display: none; }
