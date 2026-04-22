@@ -1,0 +1,66 @@
+name: deploy-book
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pq-messenger
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: pq-messenger
+
+      - name: Checkout ml-kem-notebooks (pqc-edu source)
+        uses: actions/checkout@v4
+        with:
+          repository: hulryung/ml-kem-notebooks
+          path: ml-kem-notebooks
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ./ml-kem-notebooks
+          pip install -e "./pq-messenger[dev,book]"
+
+      - name: Run tests
+        run: |
+          cd pq-messenger && pytest tests/ -v
+
+      - name: Build the book
+        run: |
+          cd pq-messenger && jupyter-book build .
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: pq-messenger/_build/html
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
