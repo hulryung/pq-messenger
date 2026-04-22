@@ -1,0 +1,28 @@
+[project]
+name = "pqmsg"
+version = "0.1.0"
+description = "Signal-style post-quantum messenger — educational CLI using ML-KEM"
+requires-python = ">=3.11"
+dependencies = [
+    "cryptography>=42",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+book = [
+    "jupyter-book>=0.15,<2",
+    "sphinx-sitemap>=2.6",
+    "sphinxext-opengraph>=0.9",
+    "sphinx-last-updated-by-git>=0.3",
+]
+
+[project.scripts]
+pqmsg = "pqmsg.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pqmsg*"]
