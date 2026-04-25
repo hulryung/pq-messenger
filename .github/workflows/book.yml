@@ -45,9 +45,17 @@ jobs:
         run: |
           cd pq-messenger && pytest tests/ -v
 
-      - name: Build the book
+      - name: Build the book (English)
         run: |
           cd pq-messenger && jupyter-book build .
+
+      - name: Build the book (Korean)
+        run: |
+          cd pq-messenger && jupyter-book build ko/
+
+      - name: Merge Korean build into English site
+        run: |
+          cd pq-messenger && cp -r ko/_build/html _build/html/ko
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
