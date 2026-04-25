@@ -35,6 +35,9 @@ sphinx:
     html_show_copyright: false
     html_last_updated_fmt: "%Y-%m-%dT%H:%M:%S+00:00"
     html_baseurl: "https://hulryung.github.io/pq-messenger/ko/"
+    html_static_path: ["../_static"]
+    html_css_files:
+      - custom.css
     html_meta:
       description: "Signal 스타일의 포스트 양자 메신저 CLI — ML-KEM 기반 교육용 캡스톤. 순수 파이썬으로 구현한 하이브리드 X3DH + 대칭 래칫."
       keywords: "포스트 양자 암호, ML-KEM, Kyber, Signal, X3DH, 래칫, 메신저, 파이썬, post-quantum cryptography"

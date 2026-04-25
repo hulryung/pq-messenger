@@ -8,7 +8,10 @@ This uses the pure-Python `pqc_edu` ML-KEM implementation (not constant-time, no
 
 ## Read online
 
-Jupyter Book (protocol walk-through): https://hulryung.github.io/pq-messenger/
+Jupyter Book (protocol walk-through):
+
+- English: https://hulryung.github.io/pq-messenger/
+- 한국어: https://hulryung.github.io/pq-messenger/ko/
 
 ## Setup
 

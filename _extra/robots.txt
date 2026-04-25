@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://hulryung.github.io/pq-messenger/sitemap.xml
+Sitemap: https://hulryung.github.io/pq-messenger/ko/sitemap.xml
