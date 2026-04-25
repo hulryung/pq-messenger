@@ -22,6 +22,16 @@ Educational only — uses the pure-Python `pqc_edu` ML-KEM implementation, omits
 3. **Ratcheting** — 10-step symmetric chain; compromise simulation at step 5
 4. **Full session** — two OS processes, five roundtrip messages over a shared file queue
 
+## Prerequisites
+
+This book assumes you've worked through (or are happy to skim) the ML-KEM internals from the companion book:
+
+- [**ML-KEM spec**](https://hulryung.github.io/ml-kem-notebooks/notebooks/06_ml_kem_spec.html) — what `Encaps`/`Decaps` actually compute
+- [**Hybrid KEM**](https://hulryung.github.io/ml-kem-notebooks/notebooks/08_hybrid_kem.html) — why we combine X25519 with ML-KEM-768
+- [**Wrap-up**](https://hulryung.github.io/ml-kem-notebooks/notebooks/09_wrap_up.html) — gaps vs. production (we inherit them all)
+
+The whole companion book: [ML-KEM from Scratch](https://hulryung.github.io/ml-kem-notebooks/).
+
 ## Source
 
 [github.com/hulryung/pq-messenger](https://github.com/hulryung/pq-messenger)
