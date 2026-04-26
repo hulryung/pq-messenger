@@ -17,6 +17,7 @@ book = [
     "sphinx-sitemap>=2.6",
     "sphinxext-opengraph>=0.9",
     "sphinx-last-updated-by-git>=0.3",
+    "sphinxcontrib-mermaid>=0.9",
 ]
 
 [project.scripts]

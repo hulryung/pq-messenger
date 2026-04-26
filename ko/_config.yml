@@ -32,6 +32,7 @@ sphinx:
     - sphinx_last_updated_by_git
     - sphinx.ext.autodoc
     - sphinx.ext.napoleon
+    - sphinxcontrib.mermaid
   config:
     language: ko
     html_show_copyright: false
