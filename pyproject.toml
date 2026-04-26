@@ -1,6 +1,6 @@
 [project]
 name = "pqmsg"
-version = "0.1.0"
+version = "0.2.0"
 description = "Signal-style post-quantum messenger — educational CLI using ML-KEM"
 license = "MIT"
 license-files = ["LICENSE"]
