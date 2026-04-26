@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hulryung.github.io/pq-messenger/sitemap.xml
-Sitemap: https://hulryung.github.io/pq-messenger/ko/sitemap.xml
+Sitemap: https://pqmsg.hulryung.com/sitemap.xml
+Sitemap: https://pqmsg.hulryung.com/ko/sitemap.xml

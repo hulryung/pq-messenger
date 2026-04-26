@@ -37,7 +37,7 @@ sphinx:
     language: ko
     html_show_copyright: false
     html_last_updated_fmt: "%Y-%m-%dT%H:%M:%S+00:00"
-    html_baseurl: "https://hulryung.github.io/pq-messenger/ko/"
+    html_baseurl: "https://pqmsg.hulryung.com/ko/"
     html_static_path: ["../_static"]
     templates_path: ["../_templates"]
     html_css_files:
@@ -49,7 +49,7 @@ sphinx:
     sitemap_url_scheme: "{link}"
     sitemap_show_lastmod: true
     sitemap_indent: 2
-    ogp_site_url: "https://hulryung.github.io/pq-messenger/ko/"
+    ogp_site_url: "https://pqmsg.hulryung.com/ko/"
     ogp_site_name: "pq-messenger (한국어)"
     ogp_description_length: 200
     ogp_type: "article"

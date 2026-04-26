@@ -149,7 +149,7 @@ This uses the pure-Python `pqc_edu` ML-KEM implementation (not constant-time, no
 
 ## 📖 Read online
 
-- Jupyter Book (protocol walk-through): https://hulryung.github.io/pq-messenger/
+- Jupyter Book (protocol walk-through): https://pqmsg.hulryung.com/
 
 ## Setup
 
@@ -1907,7 +1907,7 @@ sphinx:
   config:
     html_show_copyright: false
     html_last_updated_fmt: "%Y-%m-%dT%H:%M:%S+00:00"
-    html_baseurl: "https://hulryung.github.io/pq-messenger/"
+    html_baseurl: "https://pqmsg.hulryung.com/"
     html_static_path: ["_static"]
     html_extra_path: ["_extra"]
     templates_path: ["_templates"]
@@ -1920,7 +1920,7 @@ sphinx:
     sitemap_url_scheme: "{link}"
     sitemap_show_lastmod: true
     sitemap_indent: 2
-    ogp_site_url: "https://hulryung.github.io/pq-messenger/"
+    ogp_site_url: "https://pqmsg.hulryung.com/"
     ogp_site_name: "pq-messenger"
     ogp_description_length: 200
     ogp_type: "article"
@@ -1949,7 +1949,7 @@ Create `/Users/dkkang/dev/pq-messenger/intro.md`:
 ```markdown
 # pq-messenger
 
-A Signal-style post-quantum messenger CLI, built as the capstone project for [ML-KEM from Scratch](https://hulryung.github.io/ml-kem-notebooks/). Alice and Bob exchange end-to-end encrypted messages over a local file queue, using a hybrid X25519 + ML-KEM-768 key agreement and a symmetric ratchet per direction.
+A Signal-style post-quantum messenger CLI, built as the capstone project for [ML-KEM from Scratch](https://pqc.hulryung.com/). Alice and Bob exchange end-to-end encrypted messages over a local file queue, using a hybrid X25519 + ML-KEM-768 key agreement and a symmetric ratchet per direction.
 
 ```{warning}
 Educational only — uses the pure-Python `pqc_edu` ML-KEM implementation, omits the DH half of Signal's Double Ratchet, and has no authentication beyond TOFU. **Do not use for real messaging.**
@@ -1991,7 +1991,7 @@ Then edit `_extra/robots.txt` to be:
 User-agent: *
 Allow: /
 
-Sitemap: https://hulryung.github.io/pq-messenger/sitemap.xml
+Sitemap: https://pqmsg.hulryung.com/sitemap.xml
 ```
 
 - [ ] **Step 5: Build book locally**
@@ -2112,10 +2112,10 @@ Once the run completes:
 
 ```bash
 for nb in 01_protocol_overview 02_key_agreement 03_ratcheting 04_full_session; do
-  curl -sI "https://hulryung.github.io/pq-messenger/notebooks/${nb}.html" | head -1
+  curl -sI "https://pqmsg.hulryung.com/notebooks/${nb}.html" | head -1
 done
-curl -sI "https://hulryung.github.io/pq-messenger/" | head -1
-curl -sI "https://hulryung.github.io/pq-messenger/sitemap.xml" | head -1
+curl -sI "https://pqmsg.hulryung.com/" | head -1
+curl -sI "https://pqmsg.hulryung.com/sitemap.xml" | head -1
 ```
 
 Expected: all `HTTP/2 200`.

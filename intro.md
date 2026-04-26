@@ -1,6 +1,6 @@
 # pq-messenger
 
-A Signal-style post-quantum messenger CLI, built as the capstone project for [ML-KEM from Scratch](https://hulryung.github.io/ml-kem-notebooks/). Alice and Bob exchange end-to-end encrypted messages over a local file queue, using a hybrid X25519 + ML-KEM-768 key agreement and a symmetric ratchet per direction.
+A Signal-style post-quantum messenger CLI, built as the capstone project for [ML-KEM from Scratch](https://pqc.hulryung.com/). Alice and Bob exchange end-to-end encrypted messages over a local file queue, using a hybrid X25519 + ML-KEM-768 key agreement and a symmetric ratchet per direction.
 
 > 🌐 English · <a href="ko/">한국어</a>
 
@@ -26,11 +26,11 @@ Educational only — uses the pure-Python `pqc_edu` ML-KEM implementation, omits
 
 This book assumes you've worked through (or are happy to skim) the ML-KEM internals from the companion book:
 
-- [**ML-KEM spec**](https://hulryung.github.io/ml-kem-notebooks/notebooks/06_ml_kem_spec.html) — what `Encaps`/`Decaps` actually compute
-- [**Hybrid KEM**](https://hulryung.github.io/ml-kem-notebooks/notebooks/08_hybrid_kem.html) — why we combine X25519 with ML-KEM-768
-- [**Wrap-up**](https://hulryung.github.io/ml-kem-notebooks/notebooks/09_wrap_up.html) — gaps vs. production (we inherit them all)
+- [**ML-KEM spec**](https://pqc.hulryung.com/notebooks/06_ml_kem_spec.html) — what `Encaps`/`Decaps` actually compute
+- [**Hybrid KEM**](https://pqc.hulryung.com/notebooks/08_hybrid_kem.html) — why we combine X25519 with ML-KEM-768
+- [**Wrap-up**](https://pqc.hulryung.com/notebooks/09_wrap_up.html) — gaps vs. production (we inherit them all)
 
-The whole companion book: [ML-KEM from Scratch](https://hulryung.github.io/ml-kem-notebooks/).
+The whole companion book: [ML-KEM from Scratch](https://pqc.hulryung.com/).
 
 ## Source
 
