@@ -2,6 +2,20 @@
 
 All notable changes are kept in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/).
 
+## [1.0.0] — 2026-04-26
+
+First stable release. The cryptographic core (hybrid X3DH + Double Ratchet) and the seven-chapter book are complete and considered the reference 1.0 surface.
+
+### Changed
+
+- Canonical site moved to **`pqmsg.hulryung.com`** (Vercel-hosted; legacy `hulryung.github.io/pq-messenger/*` URLs now redirect path-aware to the new domain).
+- CI now deploys to Vercel on every push to `main`.
+
+### Added
+
+- `CHANGELOG.md` and explicit `1.0.0` version (this release).
+- `actions/cache` for `.jupyter_cache` so doc-only pushes deploy in seconds.
+
 ## [0.2.0] — 2026-04-26
 
 ### Added

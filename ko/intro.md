@@ -2,7 +2,7 @@
 
 [ML-KEM from Scratch (한국어)](https://pqc.hulryung.com/ko/)의 캡스톤 프로젝트로 만든, Signal 스타일의 포스트 양자 메신저 CLI입니다. Alice와 Bob은 로컬 파일 큐를 통해 종단 간 암호화된 메시지를 주고받으며, X25519 + ML-KEM-768 하이브리드 키 합의와 방향별 대칭 래칫(symmetric ratchet)을 사용합니다.
 
-> 🌐 <a href="../">English version</a> · 한국어
+> 🌐 <a href="../">English version</a> · 한국어 · **v1.0** · <a href="https://github.com/hulryung/pq-messenger/blob/main/CHANGELOG.md">Changelog</a>
 
 ```{warning}
 교육용으로만 사용하세요 — 순수 파이썬 `pqc_edu` ML-KEM 구현을 사용하고, Signal Double Ratchet의 DH 절반을 생략했으며, TOFU 외에는 인증이 없습니다. **실제 메시징에는 절대 사용하지 마세요.**

@@ -2,7 +2,7 @@
 
 A Signal-style post-quantum messenger CLI, built as the capstone project for [ML-KEM from Scratch](https://pqc.hulryung.com/). Alice and Bob exchange end-to-end encrypted messages over a local file queue, using a hybrid X25519 + ML-KEM-768 key agreement and a symmetric ratchet per direction.
 
-> 🌐 English · <a href="ko/">한국어</a>
+> 🌐 English · <a href="ko/">한국어</a> · **v1.0** · <a href="https://github.com/hulryung/pq-messenger/blob/main/CHANGELOG.md">Changelog</a>
 
 ```{warning}
 Educational only — uses the pure-Python `pqc_edu` ML-KEM implementation, omits the DH half of Signal's Double Ratchet, and has no authentication beyond TOFU. **Do not use for real messaging.**

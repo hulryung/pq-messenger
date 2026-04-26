@@ -34,6 +34,16 @@ jobs:
           python-version: "3.11"
           cache: pip
 
+      - name: Cache jupyter execution outputs
+        uses: actions/cache@v4
+        with:
+          path: |
+            pq-messenger/_build/.jupyter_cache
+            pq-messenger/ko/_build/.jupyter_cache
+          key: jupyter-cache-${{ runner.os }}-${{ hashFiles('pq-messenger/notebooks/**/*.ipynb', 'pq-messenger/ko/notebooks/**/*.ipynb', 'pq-messenger/pqmsg/**/*.py', 'ml-kem-notebooks/pqc_edu/**/*.py') }}
+          restore-keys: |
+            jupyter-cache-${{ runner.os }}-
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
