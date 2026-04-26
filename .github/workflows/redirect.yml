@@ -1,0 +1,67 @@
+name: pages-redirect
+# Deploys a tiny redirect-only site to GitHub Pages so the legacy
+# hulryung.github.io/pq-messenger/* URLs forward to pqmsg.hulryung.com.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/redirect.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-redirect
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate redirect site
+        run: |
+          mkdir -p site
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <title>Moved to pqmsg.hulryung.com</title>
+            <link rel="canonical" href="https://pqmsg.hulryung.com/" />
+            <meta http-equiv="refresh" content="0; url=https://pqmsg.hulryung.com/" />
+            <meta name="robots" content="noindex" />
+            <script>
+              (function () {
+                var newOrigin = "https://pqmsg.hulryung.com";
+                var path = location.pathname.replace(/^\/pq-messenger/, "");
+                if (path === "" || path === "/") path = "/";
+                location.replace(newOrigin + path + location.search + location.hash);
+              })();
+            </script>
+          </head>
+          <body>
+            <p>This site has moved to <a href="https://pqmsg.hulryung.com/">pqmsg.hulryung.com</a>.</p>
+          </body>
+          </html>
+          HTML
+          cp site/index.html site/404.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -5,18 +5,17 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: "pages"
+  group: deploy-book
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     steps:
       - name: Checkout pq-messenger
         uses: actions/checkout@v4
@@ -46,29 +45,15 @@ jobs:
           cd pq-messenger && pytest tests/ -v
 
       - name: Build the book (English)
-        run: |
-          cd pq-messenger && jupyter-book build .
+        run: cd pq-messenger && jupyter-book build .
 
       - name: Build the book (Korean)
-        run: |
-          cd pq-messenger && jupyter-book build ko/
+        run: cd pq-messenger && jupyter-book build ko/
 
       - name: Merge Korean build into English site
+        run: cd pq-messenger && cp -r ko/_build/html _build/html/ko
+
+      - name: Deploy to Vercel (pqmsg.hulryung.com)
         run: |
-          cd pq-messenger && cp -r ko/_build/html _build/html/ko
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: pq-messenger/_build/html
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          cd pq-messenger/_build/html
+          npx --yes vercel@latest deploy --prod --yes --token="$VERCEL_TOKEN"
