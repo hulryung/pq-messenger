@@ -1,4 +1,27 @@
 {% extends "!layout.html" %}
 {% block extrahead %}
   <meta name="google-site-verification" content="eTLg_Pmjg1XjI5uZKtkIXpmrHNatHpPu0Ig7vKU0RmE" />
+
+  {# hreflang — bilingual EN/KO discovery for search engines #}
+  <link rel="alternate" hreflang="en" href="https://hulryung.github.io/pq-messenger/{{ pagename }}.html" />
+  <link rel="alternate" hreflang="ko" href="https://hulryung.github.io/pq-messenger/ko/{{ pagename }}.html" />
+  <link rel="alternate" hreflang="x-default" href="https://hulryung.github.io/pq-messenger/{{ pagename }}.html" />
+
+  {# JSON-LD structured data — eligible for Google rich results #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": {{ title|striptags|tojson }},
+    "author": { "@type": "Person", "name": "hulryung" },
+    "publisher": { "@type": "Person", "name": "hulryung" },
+    "url": "{% if language == 'ko' %}https://hulryung.github.io/pq-messenger/ko/{{ pagename }}.html{% else %}https://hulryung.github.io/pq-messenger/{{ pagename }}.html{% endif %}",
+    "inLanguage": "{{ language|default('en') }}",
+    "isPartOf": {
+      "@type": "Book",
+      "name": {{ docstitle|striptags|tojson }},
+      "url": "{% if language == 'ko' %}https://hulryung.github.io/pq-messenger/ko/{% else %}https://hulryung.github.io/pq-messenger/{% endif %}"
+    }
+  }
+  </script>
 {% endblock %}

@@ -39,6 +39,7 @@ sphinx:
     html_last_updated_fmt: "%Y-%m-%dT%H:%M:%S+00:00"
     html_baseurl: "https://hulryung.github.io/pq-messenger/ko/"
     html_static_path: ["../_static"]
+    templates_path: ["../_templates"]
     html_css_files:
       - custom.css
     html_meta:
