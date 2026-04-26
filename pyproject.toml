@@ -2,6 +2,8 @@
 name = "pqmsg"
 version = "0.1.0"
 description = "Signal-style post-quantum messenger — educational CLI using ML-KEM"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = [
     "cryptography>=42",

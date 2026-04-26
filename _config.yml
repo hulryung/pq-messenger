@@ -37,6 +37,8 @@ sphinx:
     - sphinx_sitemap
     - sphinxext.opengraph
     - sphinx_last_updated_by_git
+    - sphinx.ext.autodoc
+    - sphinx.ext.napoleon
   config:
     html_show_copyright: false
     html_last_updated_fmt: "%Y-%m-%dT%H:%M:%S+00:00"

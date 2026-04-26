@@ -1,7 +1,8 @@
 """HKDF over SHAKE256.
 
 We use SHAKE256 (variable-length XOF) so the protocol is consistent with
-ML-KEM's internal hash choice. HKDF construction (RFC 5869 style):
+ML-KEM's internal hash choice. HKDF construction (RFC 5869 style)::
+
     PRK = HMAC(salt, ikm)
     OKM = HMAC(PRK, info || counter) || ...
 

@@ -30,6 +30,8 @@ sphinx:
     - sphinx_sitemap
     - sphinxext.opengraph
     - sphinx_last_updated_by_git
+    - sphinx.ext.autodoc
+    - sphinx.ext.napoleon
   config:
     language: ko
     html_show_copyright: false

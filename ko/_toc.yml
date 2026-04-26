@@ -5,3 +5,6 @@ chapters:
   - file: notebooks/02_key_agreement
   - file: notebooks/03_ratcheting
   - file: notebooks/04_full_session
+  - file: notebooks/05_what_we_omitted
+  - file: notebooks/06_comparison
+  - file: notebooks/07_reference
