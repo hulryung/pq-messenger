@@ -49,6 +49,8 @@ sphinx:
     templates_path: ["_templates"]
     html_css_files:
       - custom.css
+    html_js_files:
+      - lang-switcher.js
     html_meta:
       description: "Signal-style post-quantum messenger CLI — educational capstone using ML-KEM. Hybrid X3DH + symmetric ratchet in pure Python."
       keywords: "post-quantum cryptography, ML-KEM, Kyber, Signal, X3DH, ratchet, messenger, Python"
